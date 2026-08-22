@@ -15,7 +15,13 @@ jobs:
         run: |
           npm install
           npm run build
+          npx cap add ios || true
           npx cap sync ios
+
+      - name: Install CocoaPods
+        run: |
+          cd ios/App
+          pod install
 
       - name: Build Xcode Project without signing
         run: |
