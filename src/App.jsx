@@ -72,14 +72,10 @@ function App() {
     }
 
     if (window.confirm(`Êtes-vous sûr de vouloir supprimer le profil "${activeProfile}" et toutes ses données ?`)) {
-      // 1. Retirer le prénom de la liste
       const newProfiles = profiles.filter(p => p !== activeProfile);
       setProfiles(newProfiles);
-
-      // 2. Basculer sur le premier profil restant
       setActiveProfile(newProfiles[0]);
 
-      // 3. (Optionnel) Nettoyer les données sauvegardées pour ne pas polluer le localStorage
       setTrackers((prev) => {
         const updatedTrackers = { ...prev };
         delete updatedTrackers[activeProfile];
@@ -88,30 +84,9 @@ function App() {
     }
   };
 
-  const handleExportPDF = () => {
-    const printWindow = window.open('', '_blank');
-    const testedList = foodsData.filter((f) => currentTracker[f.id]?.tested);
-
-    printWindow.document.write(`
-      <html>
-        <head><title>Bilan Diversification - ${activeProfile}</title></head>
-        <body style="font-family: sans-serif; padding: 20px;">
-          <h1>👶 Bilan de diversification : ${activeProfile}</h1>
-          <p>Aliments goûtés (${testedList.length}/${foodsData.length}) :</p>
-          <ul>
-            ${testedList.map(f => `<li><strong>${f.name}</strong> (${f.category})</li>`).join('')}
-          </ul>
-        </body>
-      </html>
-    `);
-    printWindow.document.close();
-    printWindow.print();
-  };
-
   const filteredFoods = foodsData.filter((food) => {
     const matchesSearch = food.name.toLowerCase().includes(searchTerm.toLowerCase());
 
-    // Gère la catégorie spéciale 'Allergènes' vs les autres catégories
     const matchesCategory = !selectedCategory || (
       selectedCategory === 'Allergènes'
         ? food.isAllergen
@@ -125,6 +100,7 @@ function App() {
 
     return matchesSearch && matchesCategory && matchesFilter;
   });
+
   return (
     <div
       style={{
@@ -152,7 +128,6 @@ function App() {
 
         {/* Sélecteur de Profil & Export */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px', gap: '8px' }}>
-
           <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
             <select
               value={activeProfile}
@@ -190,6 +165,7 @@ function App() {
               🗑️
             </button>
           </div>
+
           <div style={{ display: 'flex', gap: '6px' }}>
             <button
               onClick={handleAddProfile}
@@ -207,7 +183,6 @@ function App() {
             >
               + Enfant
             </button>
-
 
             <button
               onClick={() => setShowSummary(true)}
@@ -228,7 +203,7 @@ function App() {
           </div>
         </div>
 
-        {/* Boutons Guides Quantités & Repas */}
+        {/* Boutons Guides Quantités, Santé & Repas */}
         <div style={{ display: 'flex', gap: '8px', marginBottom: '12px' }}>
           <button
             onClick={() => setShowPortions(true)}
@@ -245,13 +220,13 @@ function App() {
               boxShadow: '0 2px 6px rgba(0,0,0,0.04)'
             }}
           >
-            📊 Quantités / Âge
+            📊 Quantités
           </button>
 
           <button
             onClick={() => setShowHealthTracker(true)}
             style={{
-              width: '100%',
+              flex: 1,
               background: '#ffffff',
               border: '1.5px solid #9333ea',
               color: '#7e22ce',
@@ -260,11 +235,10 @@ function App() {
               fontSize: '12px',
               fontWeight: 'bold',
               cursor: 'pointer',
-              marginBottom: '12px',
               boxShadow: '0 2px 6px rgba(0,0,0,0.04)'
             }}
           >
-            🩺 Suivi Santé & Transit (Selles / Allergies)
+            🩺 Santé & Transit
           </button>
 
           <button
@@ -282,7 +256,7 @@ function App() {
               boxShadow: '0 2px 6px rgba(0,0,0,0.04)'
             }}
           >
-            🕒 Repas par jour
+            🕒 Repas/jour
           </button>
         </div>
 
@@ -378,7 +352,7 @@ function App() {
         )}
         {activeTab === 'security' && <SecurityGuide />}
 
-        {/* Modales */}
+        {/* Modales (Nettoyées des doublons) */}
         <FoodDetailModal
           food={selectedFood}
           onClose={() => setSelectedFood(null)}
@@ -388,9 +362,7 @@ function App() {
         />
         {showPortions && <PortionsModal onClose={() => setShowPortions(false)} />}
         {showFirstAid && <FirstAidModal onClose={() => setShowFirstAid(false)} />}
-        {showPortions && <PortionsModal onClose={() => setShowPortions(false)} />}
         {showDailyMeals && <DailyMealsModal onClose={() => setShowDailyMeals(false)} />}
-        {showFirstAid && <FirstAidModal onClose={() => setShowFirstAid(false)} />}
         {showHealthTracker && <HealthTrackerModal onClose={() => setShowHealthTracker(false)} />}
         {showSummary && (
           <SummaryModal
