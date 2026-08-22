@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: 22
 
-      - name: Build Web App & Generate iOS Project
+      - name: Build Web App & Capacitor
         run: |
           npm install
           npm run build
@@ -19,6 +19,11 @@ jobs:
           rm -rf ios
           npx cap add ios
           npx cap sync ios
+
+      - name: Force CocoaPods Installation
+        run: |
+          cd ios/App
+          pod install --repo-update
 
       - name: Build Xcode Project without signing
         run: |
