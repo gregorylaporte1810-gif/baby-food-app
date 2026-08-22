@@ -30,7 +30,7 @@ jobs:
             CODE_SIGNING_ALLOWED=NO \
             BUILD_DIR=build
           mkdir -p Payload
-          mv build/Build/Products/Debug-iphoneos/App.app Payload/ || mv build/Uninstalled-iphoneos/App.app Payload/
+          mv build/Debug-iphoneos/App.app Payload/
           zip -r App.ipa Payload
 
       - name: Upload IPA
