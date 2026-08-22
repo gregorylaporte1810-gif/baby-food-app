@@ -11,21 +11,13 @@ jobs:
         with:
           node-version: 22
 
-      - name: Build Web App & Capacitor
+      - name: Install & Sync
         run: |
           npm install
           npm run build
-          npm install @capacitor/ios
-          rm -rf ios
-          npx cap add ios
           npx cap sync ios
 
-      - name: Force CocoaPods Installation
-        run: |
-          cd ios/App
-          pod install --repo-update
-
-      - name: Build Xcode Project without signing
+      - name: Build Xcode Project
         run: |
           cd ios/App
           xcodebuild -workspace App.xcworkspace \
