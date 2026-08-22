@@ -17,11 +17,6 @@ jobs:
           npm run build
           npx cap sync ios
 
-      - name: Install CocoaPods
-        run: |
-          cd ios/App
-          pod install
-
       - name: Build Xcode Project
         run: |
           cd ios/App
