@@ -1,0 +1,1310 @@
+[
+  {
+    "id": "carotte",
+    "name": "Carotte",
+    "category": "Légumes",
+    "seasons": [
+      "Automne",
+      "Hiver",
+      "Printemps",
+      "Été"
+    ],
+    "minAgeMonths": 4,
+    "isAllergen": false,
+    "prepPuree": "Cuite à la vapeur puis mixée très finement avec un filet d'huile.",
+    "prepDme": "Cuite à cœur (très fondante), coupée en gros bâtonnets de la taille d'un doigt.",
+    "chokingRisk": "Élevé si crue. Doit être impérativement bien cuite et fondante.",
+    "icon": "🥕"
+  },
+  {
+    "id": "courgette",
+    "name": "Courgette",
+    "category": "Légumes",
+    "seasons": [
+      "Été"
+    ],
+    "minAgeMonths": 4,
+    "isAllergen": false,
+    "prepPuree": "Cuite à la vapeur (retirer la peau et les pépins au début), mixée lisse.",
+    "prepDme": "En demi-lunes ou bâtonnets fondants cuits à la vapeur.",
+    "chokingRisk": "Faible si bien cuite.",
+    "icon": "🥒"
+  },
+  {
+    "id": "brocoli",
+    "name": "Brocoli",
+    "category": "Légumes",
+    "seasons": [
+      "Automne",
+      "Hiver"
+      
+    ],
+    "minAgeMonths": 4,
+    "isAllergen": false,
+    "prepPuree": "Cuire les fleurettes à la vapeur et mixer lisses.",
+    "prepDme": "Proposer une grosse fleurette cuite fondante avec la tige comme poignée.",
+    "chokingRisk": "Faible si bien cuit.",
+    "icon": "🥦"
+  },
+  {
+    "id": "potimarron",
+    "name": "Potimarron / Courge",
+    "category": "Légumes",
+    "seasons": [
+      "Automne",
+      "Hiver"
+    ],
+    "minAgeMonths": 4,
+    "isAllergen": false,
+    "prepPuree": "Cuit à la vapeur avec la peau (si bio) puis mixé finement.",
+    "prepDme": "En gros quartiers cuits au four ou vapeur jusqu'à consistance molle.",
+    "chokingRisk": "Faible.",
+    "icon": "🎃"
+  },
+  {
+    "id": "haricot-vert",
+    "name": "Haricot vert",
+    "category": "Légumes",
+    "seasons": [
+      "Été"
+    ],
+    "minAgeMonths": 4,
+    "isAllergen": false,
+    "prepPuree": "Bien effilé, cuit très fondant puis mixé longuement.",
+    "prepDme": "Servir très bien cuit, en poignée ou écrasé.",
+    "chokingRisk": "Moyen si le haricot est filandreux ou croquant.",
+    "icon": "🫛"
+  },
+  {
+    "id": "poireau",
+    "name": "Poireau",
+    "category": "Légumes",
+    "seasons": [
+      "Hiver"
+    ],
+    "minAgeMonths": 4,
+    "isAllergen": false,
+    "prepPuree": "Utiliser le blanc cuit à la vapeur, mixé finement avec un peu de pomme de terre.",
+    "prepDme": "Proposer le blanc cuit très tendre et émincé ou en rouleau fondant.",
+    "chokingRisk": "Moyen si trop filandreux.",
+    "icon": "🥬"
+  },
+  {
+    "id": "fenouil",
+    "name": "Fenouil",
+    "category": "Légumes",
+    "seasons": [
+      "Été",
+      "Automne"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Cuit longuement à la vapeur et mixé très finement pour retirer les fibres.",
+    "prepDme": "En gros quartier bien braisé ou cuit vapeur très tendre.",
+    "chokingRisk": "Moyen si cru ou trop croquant.",
+    "icon": "🧅"
+  },
+  {
+    "id": "navet",
+    "name": "Navet",
+    "category": "Légumes",
+    "seasons": [
+      "Automne",
+      "Hiver",
+      "Printemps"
+    ],
+    "minAgeMonths": 4,
+    "isAllergen": false,
+    "prepPuree": "Cuit à la vapeur puis mixé avec un légume doux comme la carotte.",
+    "prepDme": "Coupé en gros bâtonnets fondants cuits à cœur.",
+    "chokingRisk": "Faible si très fondant.",
+    "icon": "🫚"
+  },
+  {
+    "id": "rutabaga",
+    "name": "Rutabaga",
+    "category": "Légumes",
+    "seasons": [
+      "Automne",
+      "Hiver"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Épluché, cuit longuement à la vapeur et mixé lisse.",
+    "prepDme": "En frites épaisses cuites au four ou à la vapeur jusqu'à consistance molle.",
+    "chokingRisk": "Faible si bien cuit.",
+    "icon": "🍠"
+  },
+  {
+    "id": "asperge",
+    "name": "Asperge",
+    "category": "Légumes",
+    "seasons": [
+      "Printemps"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Têtes cuites à la vapeur puis mixées finement.",
+    "prepDme": "Pointe d'asperge verte très tendre servie entière à attraper.",
+    "chokingRisk": "Moyen si la tige est trop dures ou filandreuse.",
+    "icon": "🌱"
+  },
+  {
+    "id": "oignon",
+    "name": "Oignon / Échalote",
+    "category": "Légumes",
+    "seasons": [
+      "Printemps",
+      "Été",
+      "Automne",
+      "Hiver"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Bien fondu dans une poêle avec un filet d'huile puis mixé dans la purée.",
+    "prepDme": "Cuit et confit doucement, incorporé dans des galettes ou sauces.",
+    "chokingRisk": "Faible si bien cuit.",
+    "icon": "🧅"
+  },
+  {
+    "id": "ail",
+    "name": "Ail",
+    "category": "Légumes",
+    "seasons": [
+      "Été",
+      "Automne"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Une gousse dégermée cuite directement dans le bouillon des légumes.",
+    "prepDme": "Écrasé et cuit dans un plat ou une sauce.",
+    "chokingRisk": "Faible si cuit et écrasé.",
+    "icon": "🧄"
+  },
+  {
+    "id": "patisson",
+    "name": "Pâtisson",
+    "category": "Légumes",
+    "seasons": [
+      "Été",
+      "Automne"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Cuit à la vapeur sans la peau puis mixé.",
+    "prepDme": "Proposé en gros quartiers fondants cuits à la vapeur ou au four.",
+    "chokingRisk": "Faible.",
+    "icon": "🫑"
+  },
+  {
+    "id": "mache-laitue",
+    "name": "Salade (Mâche, Laitue)",
+    "category": "Légumes",
+    "seasons": [
+      "Printemps",
+      "Été",
+      "Automne",
+      "Hiver"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Cuite à la vapeur quelques minutes puis mixée avec de la pomme de terre.",
+    "prepDme": "Hachée très finement dans une préparation ou omelette.",
+    "chokingRisk": "🔴 Élevé si feuille entière crue (risque de coller au palais).",
+    "icon": "🥗"
+  },
+  {
+    "id": "aubergine",
+    "name": "Aubergine",
+    "category": "Légumes",
+    "seasons": [
+      "Été"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Bien cuite à la vapeur ou au four (sans la peau au début), puis mixée.",
+    "prepDme": "En bâtonnets ou fondants bien cuits au four avec un filet d'huile d'olive.",
+    "chokingRisk": "Faible si très bien cuite et fondante.",
+    "icon": "🍆"
+  },
+  {
+    "id": "chou-fleur",
+    "name": "Chou-fleur",
+    "category": "Légumes",
+    "seasons": [
+      "Automne",
+      "Hiver",
+      "Printemps"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Cuire les fleurettes à la vapeur et mixer lisses.",
+    "prepDme": "Proposer une grosse fleurette bien cuite avec la tige comme poignée.",
+    "chokingRisk": "Faible si très tendre.",
+    "icon": "🥦"
+  },
+  {
+    "id": "epinard",
+    "name": "Épinard",
+    "category": "Légumes",
+    "seasons": [
+      "Automne",
+      "Hiver",
+      "Printemps"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Cuit à la vapeur, bien haché puis mixé dans une purée de pomme de terre.",
+    "prepDme": "Haché et incorporé dans une galette ou omelette souple.",
+    "chokingRisk": "Moyen si feuilles entières (risque de coller au palais).",
+    "icon": "🥬"
+  },
+  {
+    "id": "poivron",
+    "name": "Poivron (Rouge/Jaune)",
+    "category": "Légumes",
+    "seasons": [
+      "Été"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Rôti au four pour retirer la peau, puis mixé.",
+    "prepDme": "Pelé, coupé en de larges lanières et cuit très fondant au four.",
+    "chokingRisk": "Élevé si cru ou avec la peau dure.",
+    "icon": "🫑"
+  },
+  {
+    "id": "panais",
+    "name": "Panais",
+    "category": "Légumes",
+    "seasons": [
+      "Automne",
+      "Hiver"
+    ],
+    "minAgeMonths": 4,
+    "isAllergen": false,
+    "prepPuree": "Cuit à la vapeur et mixé très finement.",
+    "prepDme": "En grosses frites tendres cuites au four ou à la vapeur.",
+    "chokingRisk": "Faible si bien cuit.",
+    "icon": "🥕"
+  },
+  {
+    "id": "concombre",
+    "name": "Concombre",
+    "category": "Légumes",
+    "seasons": [
+      "Été"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Mixé frais sans la peau ni les pépins avec un peu de fromage blanc.",
+    "prepDme": "Épluché, épépiné et coupé en longs bâtonnets larges, ou râpé.",
+    "chokingRisk": "Moyen si le bâtonnet est trop dur.",
+    "icon": "🥒"
+  },
+  {
+    "id": "artichaut",
+    "name": "Artichaut",
+    "category": "Légumes",
+    "seasons": [
+      "Printemps",
+      "Été"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Cœur d'artichaut bien cuit à la vapeur puis mixé finement.",
+    "prepDme": "Feuille cuite à faire gratter avec les incisives sous surveillance, ou cœur fondant en morceaux.",
+    "chokingRisk": "Faible pour le cœur bien cuit.",
+    "icon": "🥗"
+  },
+  {
+    "id": "chou-bruxelles",
+    "name": "Chou de Bruxelles",
+    "category": "Légumes",
+    "seasons": [
+      "Automne",
+      "Hiver"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Bien cuit à la vapeur et mixé avec un peu de pomme de terre.",
+    "prepDme": "Cuit très fondant et coupé en deux ou écrasé.",
+    "chokingRisk": "Moyen si servi entier et ferme.",
+    "icon": "🥬"
+  },
+  {
+    "id": "betterave",
+    "name": "Betterave cuite",
+    "category": "Légumes",
+    "seasons": [
+      "Automne",
+      "Hiver"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Mixée très finement (cuite au four ou vapeur).",
+    "prepDme": "En gros bâtonnets bien fondants cuits à la vapeur.",
+    "chokingRisk": "Faible si très tendre.",
+    "icon": "🧅"
+  },
+  {
+    "id": "pomme",
+    "name": "Pomme",
+    "category": "Fruits",
+    "seasons": [
+      "Automne",
+      "Hiver"
+    ],
+    "minAgeMonths": 4,
+    "isAllergen": false,
+    "prepPuree": "Cuite en compote sans sucre ajouté, mixée lisse.",
+    "prepDme": "Cuite au four ou vapeur jusqu'à ce qu'elle soit fondante. Ne jamais donner crue !",
+    "chokingRisk": "Très élevé si crue ou dure.",
+    "icon": "🍎"
+  },
+  {
+    "id": "poire",
+    "name": "Poire",
+    "category": "Fruits",
+    "seasons": [
+      "Automne",
+      "Hiver"
+    ],
+    "minAgeMonths": 4,
+    "isAllergen": false,
+    "prepPuree": "En compote cuite ou crue si la poire est extrêmement mûre et juteuse.",
+    "prepDme": "En gros quartiers si elle est juteuse et fondante, sinon cuite à la vapeur.",
+    "chokingRisk": "Élevé si trop ferme.",
+    "icon": "🍐"
+  },
+  {
+    "id": "banane",
+    "name": "Banane",
+    "category": "Fruits",
+    "seasons": [
+      "Printemps",
+      "Été",
+      "Automne",
+      "Hiver"
+    ],
+    "minAgeMonths": 4,
+    "isAllergen": false,
+    "prepPuree": "Bien mûre, écrasée à la fourchette.",
+    "prepDme": "Couper en deux et laisser une partie de la peau au bout pour faciliter la prise en main.",
+    "chokingRisk": "Faible si bien mûre.",
+    "icon": "🍌"
+  },
+  {
+    "id": "avocat",
+    "name": "Avocat",
+    "category": "Fruits",
+    "seasons": [
+      "Automne",
+      "Hiver",
+      "Printemps"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Bien mûr, écrasé directement à la fourchette.",
+    "prepDme": "En gros quartier bien mûr. Rouler dans la poudre de noisette si ça glisse.",
+    "chokingRisk": "Faible si très mûr.",
+    "icon": "🥑"
+  },
+  {
+    "id": "fraise",
+    "name": "Fraise",
+    "category": "Fruits",
+    "seasons": [
+      "Printemps",
+      "Été"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Cuite légèrement en compote ou écrasée mûre.",
+    "prepDme": "En gros morceaux si très grosse et mûre, ou écrasée.",
+    "chokingRisk": "Moyen si petite et ferme (risque de glisser entière dans la gorge).",
+    "icon": "🍓"
+  },
+  {
+    "id": "peche",
+    "name": "Pêche / Brugnon",
+    "category": "Fruits",
+    "seasons": [
+      "Été"
+    ],
+    "minAgeMonths": 4,
+    "isAllergen": false,
+    "prepPuree": "Peeled ou cuite en compote sans sucre.",
+    "prepDme": "Pelée, en quartier très mûr et fondant, ou pochée à l'eau.",
+    "chokingRisk": "Moyen si la chair est ferme.",
+    "icon": "🍑"
+  },
+  {
+    "id": "framboise",
+    "name": "Framboise",
+    "category": "Fruits",
+    "seasons": [
+      "Été"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Écrasée ou cuite en compote (passée au chinois si pépins trop gênants).",
+    "prepDme": "Écrasée légèrement entre deux doigts avant de donner à bébé.",
+    "chokingRisk": "Faible si légèrement aplatie.",
+    "icon": "🫐"
+  },
+  {
+    "id": "melon",
+    "name": "Melon",
+    "category": "Fruits",
+    "seasons": [
+      "Été"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Mixé frais lorsqu'il est très mûr et juteux.",
+    "prepDme": "Tranche large très mûre (sans la peau ni pépins) ou râpé.",
+    "chokingRisk": "Moyen si la chair est trop ferme ou croquante.",
+    "icon": "🍈"
+  },
+  {
+    "id": "prune",
+    "name": "Prune / Quetsche",
+    "category": "Fruits",
+    "seasons": [
+      "Été",
+      "Automne"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Cuite en compote sans le noyau et sans la peau.",
+    "prepDme": "Cuite et très fondante, coupée en deux sans noyau.",
+    "chokingRisk": "Élevé si crue et ferme.",
+    "icon": "🫐"
+  },
+  {
+    "id": "mangue",
+    "name": "Mangue",
+    "category": "Fruits",
+    "seasons": [
+      "Hiver",
+      "Printemps"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Mixée fraîche si elle est très mûre, ou légèrement pochée.",
+    "prepDme": "En gros morceau le long du noyau (laisser un peu de chair) ou tranchée mûre.",
+    "chokingRisk": "Faible si très mûre et fondante.",
+    "icon": "🥭"
+  },
+  {
+    "id": "abricot",
+    "name": "Abricot",
+    "category": "Fruits",
+    "seasons": [
+      "Été"
+    ],
+    "minAgeMonths": 4,
+    "isAllergen": false,
+    "prepPuree": "Cuit en compote sans le noyau pour réduire l'acidité, puis mixé.",
+    "prepDme": "Bien mûr, coupé en deux sans le noyau, ou poché à la vapeur.",
+    "chokingRisk": "Faible si bien mûr.",
+    "icon": "🍑"
+  },
+  {
+    "id": "kiwi",
+    "name": "Kiwi",
+    "category": "Fruits",
+    "seasons": [
+      "Hiver",
+      "Printemps"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Bien mûr, épluché et écrasé finement à la fourchette.",
+    "prepDme": "Coupé en quartier dans le sens de la longueur si très mûr.",
+    "chokingRisk": "Moyen s'il est ferme ou trop acide.",
+    "icon": "🥝"
+  },
+  {
+    "id": "clementine",
+    "name": "Clémentine / Mandarine",
+    "category": "Fruits",
+    "seasons": [
+      "Hiver"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Mixée et filtrée pour retirar toutes les peaux blanches et pépins.",
+    "prepDme": "Quartiers pelés à vif (sans la peau transparente entourant le suprême).",
+    "chokingRisk": "Élevé avec la peau transparente (risque d'étouffement/coller au palais).",
+    "icon": "🍊"
+  },
+  {
+    "id": "pruneau",
+    "name": "Pruneau",
+    "category": "Fruits",
+    "seasons": [
+      "Automne",
+      "Hiver"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Réhydraté dans l'eau chaude puis mixé finement en compote.",
+    "prepDme": "Réhydraté, dénoyauté et haché dans un porridge.",
+    "chokingRisk": "Moyen si sec et collant. Toujours bien réhydrater.",
+    "icon": "🫐"
+  },
+  {
+    "id": "myrtille",
+    "name": "Myrtille",
+    "category": "Fruits",
+    "seasons": [
+      "Été"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Cuite en compote et mixée lisse.",
+    "prepDme": "Écrasée systématiquement entre deux doigts (plat) avant de servir.",
+    "chokingRisk": "🔴 Très élevé si servie entière et ronde.",
+    "icon": "🫐"
+  },
+  {
+    "id": "raisin",
+    "name": "Raisin",
+    "category": "Fruits",
+    "seasons": [
+      "Automne"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Pelu, épépiné et mixé finement.",
+    "prepDme": "Dénoyauté, pelé et coupé impérativement en 4 dans le sens de la longueur.",
+    "chokingRisk": "🔴 Très élevé si servi entier. Couper systématiquement en 4.",
+    "icon": "🍇"
+  },
+  {
+    "id": "ananas",
+    "name": "Ananas",
+    "category": "Fruits",
+    "seasons": [
+      "Hiver",
+      "Printemps"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Cuit à la vapeur sans le cœur dur, puis mixé lisse.",
+    "prepDme": "Tranche large pochée et fondante (sans la peau ni le cœur dur).",
+    "chokingRisk": "Élevé si cru et fibreux.",
+    "icon": "🍍"
+  },
+  {
+    "id": "cerise",
+    "name": "Cerise",
+    "category": "Fruits",
+    "seasons": [
+      "Printemps",
+      "Été"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Cuite en compote et dénoyautée, puis mixée.",
+    "prepDme": "Dénoyautée, coupée en 4 dans le sens de la longueur.",
+    "chokingRisk": "🔴 Très élevé avec le noyau ou entière.",
+    "icon": "🍒"
+  },
+  {
+    "id": "figue",
+    "name": "Figue",
+    "category": "Fruits",
+    "seasons": [
+      "Été",
+      "Automne"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Très mûre écrasée à la fourchette ou cuite en compote.",
+    "prepDme": "En quartier bien mûr sans la peau dure extérieure.",
+    "chokingRisk": "Faible si très mûre et pelée.",
+    "icon": "🫐"
+  },
+  {
+    "id": "kaki",
+    "name": "Kaki",
+    "category": "Fruits",
+    "seasons": [
+      "Automne",
+      "Hiver"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Kaki Persimon ou bien mûr à la chair très souple écrasé à la fourchette.",
+    "prepDme": "Tranches très mûres et fondantes ou poché à la vapeur.",
+    "chokingRisk": "Moyen si pas assez mûr (astringent et dur).",
+    "icon": "🍅"
+  },
+  {
+    "id": "rhubarbe",
+    "name": "Rhubarbe",
+    "category": "Fruits",
+    "seasons": [
+      "Printemps"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Épluchée, cuite longuement en compote avec de la pomme pour adoucir l'acidité.",
+    "prepDme": "Non recommandée crue. Incorporée cuite dans un muffin/gâteau souple.",
+    "chokingRisk": "Moyen si filandreuse.",
+    "icon": "🌱"
+  },
+  {
+    "id": "datte",
+    "name": "Datte",
+    "category": "Fruits",
+    "seasons": [
+      "Automne",
+      "Hiver"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Réhydratée dans l'eau chaude, dénoyautée et mixée pour sucrer naturellement.",
+    "prepDme": "Hachée très finement et incorporée dans un porridge ou crêpe.",
+    "chokingRisk": "🔴 Très élevé entière ou mal dénoyautée.",
+    "icon": "🌴"
+  },
+  {
+    "id": "citron",
+    "name": "Citron / Lime",
+    "category": "Fruits",
+    "seasons": [
+      "Hiver",
+      "Printemps"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Quelques gouttes de jus dans une compote ou une préparation salée.",
+    "prepDme": "Jus incorporé dans les recettes.",
+    "chokingRisk": "Aucun sous forme de jus.",
+    "icon": "🍋"
+  },
+  {
+    "id": "patate-douce",
+    "name": "Patate douce",
+    "category": "Féculents",
+    "minAgeMonths": 4,
+    "isAllergen": false,
+    "prepPuree": "Cuite vapeur et mixée avec un peu de matière grasse.",
+    "prepDme": "En frites épaisses cuites au four ou à la vapeur.",
+    "chokingRisk": "Faible si bien cuite.",
+    "icon": "🍠"
+  },
+  {
+    "id": "pomme-de-terre",
+    "name": "Pomme de terre",
+    "category": "Féculents",
+    "minAgeMonths": 4,
+    "isAllergen": false,
+    "prepPuree": "Toujours mélangée à un autre légume (jamais seule au mixer).",
+    "prepDme": "En gros bâtonnets bien fondants.",
+    "chokingRisk": "Faible si bien cuite.",
+    "icon": "🥔"
+  },
+  {
+    "id": "flocon-avoine",
+    "name": "Avoine (Gluten)",
+    "category": "Féculents",
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "En porridge cuit dans de l'eau ou du lait maternel/infantile.",
+    "prepDme": "En croquettes d'avoine ou porridge épais aggloméré en boules.",
+    "chokingRisk": "Faible.",
+    "icon": "🌾"
+  },
+  {
+    "id": "lentille-corail",
+    "name": "Lentilles corail",
+    "category": "Féculents",
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Bien cuites dans l'eau puis mixées avec un légume (ex: carotte).",
+    "prepDme": "Sous forme de galettes compactes ou boulettes fondantes.",
+    "chokingRisk": "Faible sous forme de purée ou galette.",
+    "icon": "🍲"
+  },
+  {
+    "id": "riz",
+    "name": "Riz complet / Blanc",
+    "category": "Féculents",
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Bien surcuit puis mixé avec une purée de légumes.",
+    "prepDme": "En boulettes de riz bien collant (type risotto).",
+    "chokingRisk": "Faible si le riz est collant, moyen si grains secs.",
+    "icon": "🍚"
+  },
+  {
+    "id": "pates-alphabet",
+    "name": "Pâtes (Gluten)",
+    "category": "Féculents",
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "Bien cuites et mixées ou écrasées dans la purée.",
+    "prepDme": "Grosses pâtes très cuites (type Penne ou Fusilli) faciles à attraper.",
+    "chokingRisk": "Faible si très bien cuites (fondantes).",
+    "icon": "🍝"
+  },
+  {
+    "id": "pois-chiche",
+    "name": "Pois chiche",
+    "category": "Féculents",
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Très bien cuit, retiré de sa peau puis mixé sous forme de houmous lisse.",
+    "prepDme": "Écrasé légèrement entre deux doigts ou en galette/falafel fondant.",
+    "chokingRisk": "Élevé si servi entier et rond.",
+    "icon": "🧆"
+  },
+  {
+    "id": "quinoa",
+    "name": "Quinoa",
+    "category": "Féculents",
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Très bien cuit puis mixé finement avec un légume doux.",
+    "prepDme": "Proposé sous forme de galettes compactes liées avec de la purée.",
+    "chokingRisk": "Faible sous forme de galette.",
+    "icon": "🌾"
+  },
+  {
+    "id": "semoule",
+    "name": "Semoule de blé (Gluten)",
+    "category": "Féculents",
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "Cuite dans de l'eau ou du lait infantile et incorporée à une purée.",
+    "prepDme": "Proposée en couscous bien humide en boulettes faciles à saisir.",
+    "chokingRisk": "Faible si bien hydratée.",
+    "icon": "🥣"
+  },
+  {
+    "id": "polenta",
+    "name": "Polenta (Maïs)",
+    "category": "Féculents",
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Bien fluide, servie tiède à la cuillère.",
+    "prepDme": "Refroidie en plaque puis coupée en bâtonnets frites moelleux.",
+    "chokingRisk": "Faible sous forme de bâtonnets.",
+    "icon": "🌽"
+  },
+  {
+    "id": "mais",
+    "name": "Maïs",
+    "category": "Féculents",
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Bien cuit à la vapeur puis mixé et passé au chinois pour ôter les peaux.",
+    "prepDme": "Non recommandé entier avant 12 mois. Proposer sous forme de galette ou polenta.",
+    "chokingRisk": "Élevé si grains entiers.",
+    "icon": "🌽"
+  },
+  {
+    "id": "boulgour",
+    "name": "Boulgour (Gluten)",
+    "category": "Féculents",
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "Très cuit puis mixé dans une purée.",
+    "prepDme": "Aggloméré en petites boulettes humides avec un peu de sauce ou purée.",
+    "chokingRisk": "Faible si bien hydraté.",
+    "icon": "🌾"
+  },
+  {
+    "id": "sarrasin",
+    "name": "Sarrasin (Blé noir)",
+    "category": "Féculents",
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "En bouillie ou mixé dans une souplette.",
+    "prepDme": "Sous forme de galette bretonne souple coupée en lanières.",
+    "chokingRisk": "Faible.",
+    "icon": "🌾"
+  },
+  {
+    "id": "haricot-blanc",
+    "name": "Haricot blanc / Lingot",
+    "category": "Féculents",
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Très bien cuit, débarrassé de la peau puis mixé lisse.",
+    "prepDme": "Écrasé en tartinade ou galette cuite au four.",
+    "chokingRisk": "Élevé si servi entier.",
+    "icon": "🫘"
+  },
+  {
+    "id": "haricot-rouge",
+    "name": "Haricot rouge",
+    "category": "Féculents",
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Bien cuit puis mixé finement en purée/tartinade.",
+    "prepDme": "Écrasé légèrement ou incorporé dans une galette.",
+    "chokingRisk": "Élevé si entier.",
+    "icon": "🫘"
+  },
+  {
+    "id": "lentille-verte",
+    "name": "Lentilles vertes / Blondes",
+    "category": "Féculents",
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Cuites longuement puis mixées très finement avec un légume.",
+    "prepDme": "Proposées en dahl très épais ou galettes agglomérées.",
+    "chokingRisk": "Faible en galette.",
+    "icon": "🍲"
+  },
+  {
+    "id": "pois-casse",
+    "name": "Pois cassés",
+    "category": "Féculents",
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Cuits longuement en purée / mousseline bien lisse.",
+    "prepDme": "En boulettes ou galettes compactes fondantes.",
+    "chokingRisk": "Faible en purée.",
+    "icon": "🟢"
+  },
+  {
+    "id": "oeuf",
+    "name": "Œuf",
+    "category": "Protéines",
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "Œuf dur, jaune et blanc mixés finement avec une purée.",
+    "prepDme": "En omelette bien cuite découpée en larges bandes.",
+    "chokingRisk": "Faible sous forme d'omelette souple.",
+    "icon": "🥚"
+  },
+  {
+    "id": "poulet",
+    "name": "Poulet",
+    "category": "Protéines",
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Cuit à cœur puis mixé très finement dans une purée de légumes.",
+    "prepDme": "En gros morceau de pilon (sans os) ou effiloché bien tendre.",
+    "chokingRisk": "Moyen si trop sec.",
+    "icon": "🍗"
+  },
+  {
+    "id": "saumon",
+    "name": "Saumon",
+    "category": "Protéines",
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "Cuit à cœur, arêtes retirées avec précaution, puis mixé.",
+    "prepDme": "Pavé cuit bien tendre, effiloché en gros morceaux.",
+    "chokingRisk": "Attention prioritaire aux arêtes.",
+    "icon": "🐟"
+  },
+  {
+    "id": "cabillaud",
+    "name": "Cabillaud / Poisson blanc",
+    "category": "Protéines",
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "Cuit à la vapeur, arêtes vérifiées, puis mixé.",
+    "prepDme": "Cuit à cœur, émietté en gros morceaux faciles à saisir.",
+    "chokingRisk": "Attention maximale aux arêtes.",
+    "icon": "🐟"
+  },
+  {
+    "id": "boeuf",
+    "name": "Bœuf (Haché)",
+    "category": "Protéines",
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Viande hachée bien cuite à cœur puis mixée dans la purée.",
+    "prepDme": "En boulette fondante ou boulette allongée cuite à cœur.",
+    "chokingRisk": "Moyen si la viande est trop sèche.",
+    "icon": "🥩"
+  },
+  {
+    "id": "sardine",
+    "name": "Sardine (sans sel / fraîche)",
+    "category": "Protéines",
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "Arêtes centrales retirées, écrasée à la fourchette avec une purée.",
+    "prepDme": "Proposée en demi-filet bien nettoyé, très facile à émietter.",
+    "chokingRisk": "Faible si les arêtes sont retirées.",
+    "icon": "🐟"
+  },
+  {
+    "id": "veau",
+    "name": "Veau",
+    "category": "Protéines",
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Cuit à cœur puis mixé finement avec un légume doux.",
+    "prepDme": "Servi sous forme de boulette fondante ou effiloché bien tendre.",
+    "chokingRisk": "Moyen si le morceau est sec.",
+    "icon": "🥩"
+  },
+  {
+    "id": "maquereau",
+    "name": "Maquereau",
+    "category": "Protéines",
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "Cuit au four/vapeur, arêtes soigneusement retirées, puis mixé.",
+    "prepDme": "Émietté en gros morceaux faciles à attraper.",
+    "chokingRisk": "Vérifier minutieusement l'absence d'arêtes.",
+    "icon": "🐟"
+  },
+  {
+    "id": "dinde",
+    "name": "Dinde / Escalope",
+    "category": "Protéines",
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Bien cuite à cœur puis mixée dans une purée de légumes.",
+    "prepDme": "Effilochée bien tendre après une cuisson lente à cœur.",
+    "chokingRisk": "Moyen si la viande dessèche.",
+    "icon": "🦃"
+  },
+  {
+    "id": "thon",
+    "name": "Thon (au naturel sans sel)",
+    "category": "Protéines",
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "Égoutté et mixé finement dans une purée.",
+    "prepDme": "Émietté et incorporé dans un muffin ou rillettes sur pré-cuillère.",
+    "chokingRisk": "Faible si bien émietté.",
+    "icon": "🐟"
+  },
+  {
+    "id": "colin-lieu",
+    "name": "Colin / Lieu / Merlu",
+    "category": "Protéines",
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "Cuit vapeur, vérification arêtes puis mixé.",
+    "prepDme": "Filet émietté fondant.",
+    "chokingRisk": "Attention aux arêtes.",
+    "icon": "🐟"
+  },
+  {
+    "id": "porc",
+    "name": "Porc (Filet mignon)",
+    "category": "Protéines",
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Cuit très tendre à cœur puis mixé dans une purée.",
+    "prepDme": "Effiloché très tendre issu d'une cuisson lente.",
+    "chokingRisk": "Moyen si sec.",
+    "icon": "🐖"
+  },
+  {
+    "id": "agneau",
+    "name": "Agneau",
+    "category": "Protéines",
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Cuit à cœur et mixé dans une purée de légumes rôtis.",
+    "prepDme": "Effiloché bien tendre ou petite boulette fondante.",
+    "chokingRisk": "Moyen si morceau trop gras ou sec.",
+    "icon": "🐑"
+  },
+  {
+    "id": "jambon-blanc",
+    "name": "Jambon blanc (Sans nitrite/découenné)",
+    "category": "Protéines",
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Haché et mixé directement avec une purée.",
+    "prepDme": "Coupé en fines lanières faciles à mâchouiller.",
+    "chokingRisk": "Faible.",
+    "icon": "🥓"
+  },
+  {
+    "id": "yaourt-nature",
+    "name": "Lait de vache (Yaourt)",
+    "category": "Produits Laitiers",
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "Proposer quelques cuillères de yaourt nature au lait entier.",
+    "prepDme": "Présenté sur une pré-cuillère chargée.",
+    "chokingRisk": "Aucun.",
+    "icon": "🥛"
+  },
+  {
+    "id": "mozzarella",
+    "name": "Mozzarella (Lait pasteurisé)",
+    "category": "Produits Laitiers",
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "Fondue dans une purée chaude ou mixée.",
+    "prepDme": "Découpée en petits dés ou fondue sur un légume chaud.",
+    "chokingRisk": "Moyen si trop élastique.",
+    "icon": "🧀"
+  },
+  {
+    "id": "kiri-chevre",
+    "name": "Fromage de chèvre (Pasteurisé)",
+    "category": "Produits Laitiers",
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "Une noisette mélangée dans une purée tiède.",
+    "prepDme": "Tartiné sur un bâtonnet de légume.",
+    "chokingRisk": "Faible.",
+    "icon": "🧀"
+  },
+  {
+    "id": "ricotta",
+    "name": "Ricotta (Lait pasteurisé)",
+    "category": "Produits Laitiers",
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "Incorporée directement dans une purée tiède.",
+    "prepDme": "Proposée sur une pré-cuillère ou étalée sur un bâtonnet de légume.",
+    "chokingRisk": "Aucun.",
+    "icon": "🧀"
+  },
+  {
+    "id": "emmental",
+    "name": "Emmental / Gruyère pasteurisé",
+    "category": "Produits Laitiers",
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "Râpé finement et fondu dans une purée chaude.",
+    "prepDme": "Proposé en fins bâtonnets souples ou fondu.",
+    "chokingRisk": "Moyen si en gros morceau dur.",
+    "icon": "🧀"
+  },
+  {
+    "id": "parmesan",
+    "name": "Parmesan (Parmigiano Reggiano)",
+    "category": "Produits Laitiers",
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "Saupoudré finement dans une purée salée.",
+    "prepDme": "Incorpore dans un muffin ou râpé sur des légumes.",
+    "chokingRisk": "Faible si râpé.",
+    "icon": "🧀"
+  },
+  {
+    "id": "fromage-frais",
+    "name": "Petit Suisse / Fromage blanc",
+    "category": "Produits Laitiers",
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "Mélangé à une compote ou purée salée.",
+    "prepDme": "Proposé sur pré-cuillère.",
+    "chokingRisk": "Aucun.",
+    "icon": "🥛"
+  },
+  {
+    "id": "beurre-cacahuete",
+    "name": "Arachide (Cacahuète)",
+    "category": "Allergènes",
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "Diluer 1/2 c.à.c de beurre 100% arachide dans une purée tiède.",
+    "prepDme": "Tartiné en couche très fine sur un bâtonnet de pain ou dans le porridge.",
+    "chokingRisk": "Très élevé si donné pur à la cuillère. Toujours diluer.",
+    "icon": "🥜"
+  },
+  {
+    "id": "purée-sesame",
+    "name": "Sésame (Tahin)",
+    "category": "Allergènes",
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "Mélanger une demi-cuillère à café dans une compote ou purée.",
+    "prepDme": "Tartiné très finement sur un pancake adapté ou légume.",
+    "chokingRisk": "Élevé si donné pur. Toujours diluer.",
+    "icon": "🌱"
+  },
+  {
+    "id": "poudre-amande",
+    "name": "Fruits à coque (Amande)",
+    "category": "Allergènes",
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "Incorporer 1 cuillère à café de poudre d'amande dans une compote.",
+    "prepDme": "Saupoudrer sur des quartiers de fruits glissants.",
+    "chokingRisk": "🔴 Interdiction absolue de donner des amandes entières avant 5 ans.",
+    "icon": "🌰"
+  },
+  {
+    "id": "crevette",
+    "name": "Crevette / Crustacés",
+    "category": "Allergènes",
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "Très bien cuite puis mixée finement dans une purée.",
+    "prepDme": "Hachée finement et incorporée dans une galette de légumes.",
+    "chokingRisk": "Élevé si servie entière. Toujours hacher.",
+    "icon": "🦐"
+  },
+  {
+    "id": "celeri-rave",
+    "name": "Céleri-rave",
+    "category": "Allergènes",
+    "seasons": [
+      "Automne",
+      "Hiver"
+    ],
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "Cuit à la vapeur puis mixé avec de la pomme de terre ou carotte.",
+    "prepDme": "En frites épaisses cuites au four jusqu'à tendreté.",
+    "chokingRisk": "Faible si très bien cuit.",
+    "icon": "🫚"
+  },
+  {
+    "id": "tofu",
+    "name": "Tofu / Soja",
+    "category": "Allergènes",
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "Tofu soyeux mixé directement dans une purée.",
+    "prepDme": "Tofu ferme coupé en gros bâtonnets tendres revenus à la poêle.",
+    "chokingRisk": "Faible si le tofu est tendre.",
+    "icon": "🫘"
+  },
+  {
+    "id": "poudre-noisette",
+    "name": "Fruits à coque (Noisette)",
+    "category": "Allergènes",
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "Incorporer 1 c.à.c de poudre de noisette dans une compote.",
+    "prepDme": "Saupoudrer sur les morceaux d'avocat ou de banane pour faciliter l'attrape.",
+    "chokingRisk": "🔴 Interdiction absolue de donner des noisettes entières.",
+    "icon": "🌰"
+  },
+  {
+    "id": "puree-noix-de-cajou",
+    "name": "Fruits à coque (Cajou)",
+    "category": "Allergènes",
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "Diluer 1/2 c.à.c de purée de cajou 100% dans une purée tiède.",
+    "prepDme": "Napper finement sur un bâtonnet de fruit.",
+    "chokingRisk": "🔴 Ne jamais donner entière. Toujours diluer.",
+    "icon": "🌰"
+  },
+  {
+    "id": "poudre-noix",
+    "name": "Fruits à coque (Noix)",
+    "category": "Allergènes",
+    "minAgeMonths": 6,
+    "isAllergen": true,
+    "prepPuree": "Mélanger une pincée de noix très finement moulue dans un porridge.",
+    "prepDme": "Saupoudrer en fine poudre dans les gâteaux/muffins bébé.",
+    "chokingRisk": "🔴 Ne jamais donner entière.",
+    "icon": "🌰"
+  },
+  {
+    "id": "moutarde",
+    "name": "Moutarde",
+    "category": "Allergènes",
+    "minAgeMonths": 12,
+    "isAllergen": true,
+    "prepPuree": "Une micro-pointe dans une sauce ou vinaigrette douce.",
+    "prepDme": "Diluée dans une sauce.",
+    "chokingRisk": "Aucun.",
+    "icon": "🟡"
+  },
+  {
+    "id": "cannelle",
+    "name": "Cannelle",
+    "category": "Épices & Aromates",
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Une toute petite pincée ajoutée dans une compote de pommes.",
+    "prepDme": "Saupoudrée sur des bâtonnets de patate douce.",
+    "chokingRisk": "Aucun.",
+    "icon": "🍂"
+  },
+  {
+    "id": "persil-basilic",
+    "name": "Herbes fraîches (Basilic, Persil)",
+    "category": "Épices & Aromates",
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Haché très finement et mixé directement dans la purée.",
+    "prepDme": "Incorporé dans une sauce, un houmous ou une omelette.",
+    "chokingRisk": "Faible si très finement haché.",
+    "icon": "🌿"
+  },
+  {
+    "id": "curry-doux",
+    "name": "Curry doux / Curcuma",
+    "category": "Épices & Aromates",
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Une micro-pincée dans une purée de courge ou carotte.",
+    "prepDme": "Saupoudré sur des légumes rôtis au four.",
+    "chokingRisk": "Aucun.",
+    "icon": "🌶️"
+  },
+  {
+    "id": "vanille",
+    "name": "Vanille (Gousse)",
+    "category": "Épices & Aromates",
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Pépins d'une gousse infusés lors de la cuisson d'une compote.",
+    "prepDme": "Ajoutée dans les pancakes ou porridges.",
+    "chokingRisk": "Aucun.",
+    "icon": "🍦"
+  },
+  {
+    "id": "cumin",
+    "name": "Cumin",
+    "category": "Épices & Aromates",
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Pincée de cumin moulu dans une purée de carotte ou pois chiches.",
+    "prepDme": "Saupoudré sur des légumes cuits au four.",
+    "chokingRisk": "Aucun.",
+    "icon": "🧂"
+  },
+  {
+    "id": "ciboulette-aneth",
+    "name": "Ciboulette / Aneth",
+    "category": "Épices & Aromates",
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Finement ciselées et incorporées dans une purée salée ou sauce poisson.",
+    "prepDme": "Saupoudrées dans une omelette ou sur des légumes.",
+    "chokingRisk": "Faible.",
+    "icon": "🌿"
+  },
+  {
+    "id": "thym-romarin",
+    "name": "Thym / Romarin",
+    "category": "Épices & Aromates",
+    "minAgeMonths": 6,
+    "isAllergen": false,
+    "prepPuree": "Infusé dans l'eau de cuisson des légumes puis retiré avant de mixer.",
+    "prepDme": "Saupoudré sous forme de thym effeuillé très fin.",
+    "chokingRisk": "Faible.",
+    "icon": "🌿"
+  },
+  {
+    "id": "chocolat-cacao",
+    "name": "Cacao / Chocolat",
+    "category": "Divers",
+    "minAgeMonths": 12,
+    "isAllergen": false,
+    "prepPuree": "Pincée de cacao non sucré intégrée dans une bouillie ou porridge.",
+    "prepDme": "Cacao non sucré incorporé dans un gâteau ou muffin moelleux.",
+    "chokingRisk": "🔴 Ne jamais donner de chocolat solide avant 3 ans.",
+    "icon": "🍫"
+  }
+]
