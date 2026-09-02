@@ -434,7 +434,7 @@
     ],
     "minAgeMonths": 4,
     "isAllergen": false,
-    "prepPuree": "Peeled ou cuite en compote sans sucre.",
+    "prepPuree": "Pelée ou cuite en compote sans sucre ajouté.",
     "prepDme": "Pelée, en quartier très mûr et fondant, ou pochée à l'eau.",
     "chokingRisk": "Moyen si la chair est ferme.",
     "icon": "🍑"
@@ -535,7 +535,7 @@
     ],
     "minAgeMonths": 6,
     "isAllergen": false,
-    "prepPuree": "Mixée et filtrée pour retirar toutes les peaux blanches et pépins.",
+    "prepPuree": "Mixée et filtrée pour retirer toutes les peaux blanches et les pépins.",
     "prepDme": "Quartiers pelés à vif (sans la peau transparente entourant le suprême).",
     "chokingRisk": "Élevé avec la peau transparente (risque d'étouffement/coller au palais).",
     "icon": "🍊"
@@ -970,7 +970,7 @@
     "isAllergen": false,
     "prepPuree": "Bien cuite à cœur puis mixée dans une purée de légumes.",
     "prepDme": "Effilochée bien tendre après une cuisson lente à cœur.",
-    "chokingRisk": "Moyen si la viande dessèche.",
+    "chokingRisk": "Moyen si la viande est sèche.",
     "icon": "🦃"
   },
   {

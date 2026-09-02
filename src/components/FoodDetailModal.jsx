@@ -117,6 +117,9 @@ export default function FoodDetailModal({ food, onClose, tracker, onToggleTrack,
                     <div style={{ background: 'rgba(255,255,255,0.05)', padding: '12px', borderRadius: '12px' }}>
                         <h4 style={{ margin: '0 0 6px 0', color: '#10b981' }}>🖐️ Mode DME (Morceaux)</h4>
                         <p style={{ margin: 0, fontSize: '13px', color: '#cbd5e1' }}>{food.prepDme}</p>
+                        <p style={{ margin: '8px 0 0', fontSize: '11px', color: '#fbbf24' }}>
+                            À proposer généralement vers 6 mois, seulement si bébé tient sa tête, reste assis droit avec appui, attrape et porte seul les aliments à sa bouche. Toujours sous la surveillance attentive d'un adulte.
+                        </p>
                     </div>
                 </div>
 

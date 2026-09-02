@@ -1,8 +1,14 @@
 import { useState } from 'react';
 
-export default function SummaryModal({ foods = [], tracker = {}, onClose }) {
+export default function SummaryModal({ foods = [], tracker = {}, healthStorageKey = 'baby_health_logs', onClose }) {
     const [onlyTested, setOnlyTested] = useState(false);
-    const healthLogs = JSON.parse(localStorage.getItem('baby_health_logs') || '[]');
+    let healthLogs = [];
+    try {
+        const savedLogs = localStorage.getItem(healthStorageKey) ?? localStorage.getItem('baby_health_logs');
+        healthLogs = savedLogs ? JSON.parse(savedLogs) : [];
+    } catch {
+        healthLogs = [];
+    }
     
     const testedFoods = foods.filter((food) => tracker[food.id]?.tested);
     

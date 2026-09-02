@@ -1,23 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-export default function HealthTrackerModal({ onClose }) {
-    const [logs, setLogs] = useState([]);
+export default function HealthTrackerModal({ onClose, storageKey = 'baby_health_logs' }) {
+    const [logs, setLogs] = useState(() => {
+        try {
+            const savedLogs = localStorage.getItem(storageKey) ?? localStorage.getItem('baby_health_logs');
+            return savedLogs ? JSON.parse(savedLogs) : [];
+        } catch {
+            return [];
+        }
+    });
     const [stoolType, setStoolType] = useState('Normale');
     const [symptoms, setSymptoms] = useState([]);
     const [note, setNote] = useState('');
 
-    // Charger l'historique depuis le localStorage au montage
-    useEffect(() => {
-        const savedLogs = localStorage.getItem('baby_health_logs');
-        if (savedLogs) {
-            setLogs(JSON.parse(savedLogs));
-        }
-    }, []);
-
     // Sauvegarder dans le localStorage
     const saveLogs = (newLogs) => {
         setLogs(newLogs);
-        localStorage.setItem('baby_health_logs', JSON.stringify(newLogs));
+        localStorage.setItem(storageKey, JSON.stringify(newLogs));
     };
 
     const toggleSymptom = (symptom) => {
@@ -110,6 +109,10 @@ export default function HealthTrackerModal({ onClose }) {
                     >
                         ✕
                     </button>
+                </div>
+
+                <div style={{ background: '#fef2f2', border: '1px solid #ef4444', borderRadius: '12px', padding: '10px 12px', marginBottom: '14px', color: '#7f1d1d', fontSize: '12px', lineHeight: 1.45 }}>
+                    <strong>Urgence :</strong> si bébé respire mal, gonfle du visage ou de la langue, devient très pâle, mou ou fait un malaise, appelez immédiatement le <strong>15 ou le 112</strong>. Ce journal ne remplace pas un avis médical.
                 </div>
 
                 {/* Formulaire d'ajout */}

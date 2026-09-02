@@ -77,7 +77,7 @@ export default function FirstAidModal({ onClose }) {
                     {/* Étape A : Claques dans le dos */}
                     <div style={{ background: 'rgba(255, 255, 255, 0.05)', padding: '14px', borderRadius: '12px' }}>
                         <h4 style={{ margin: '0 0 6px 0', color: '#f59e0b', fontSize: '14px' }}>
-                            🖐️ Étape A : 5 Claques dans le dos (Mofenson)
+                            🖐️ Étape A : jusqu'à 5 claques dans le dos
                         </h4>
                         <ul style={{ margin: 0, paddingLeft: '18px', fontSize: '13px', color: '#cbd5e1', display: 'flex', flexDirection: 'column', gap: '4px' }}>
                             <li>Placez le bébé à califourchon sur votre avant-bras, <strong>tête penchée vers le bas</strong>.</li>
@@ -93,8 +93,8 @@ export default function FirstAidModal({ onClose }) {
                         </h4>
                         <ul style={{ margin: 0, paddingLeft: '18px', fontSize: '13px', color: '#cbd5e1', display: 'flex', flexDirection: 'column', gap: '4px' }}>
                             <li>Retournez le bébé sur le dos le long de votre autre avant-bras, toujours tête plus basse que le buste.</li>
-                            <li>Placez <strong>2 doigts au milieu de la poitrine</strong> (juste en dessous de la ligne des tétéons).</li>
-                            <li>Effectuez <strong>5 compressions profondes et lentes</strong>.</li>
+                            <li>Placez <strong>2 doigts au milieu de la poitrine</strong> (juste en dessous de la ligne des tétons).</li>
+                            <li>Effectuez jusqu'à <strong>5 compressions thoraciques</strong>, en vérifiant après chacune si l'objet est expulsé.</li>
                         </ul>
                     </div>
                 </div>
@@ -104,33 +104,17 @@ export default function FirstAidModal({ onClose }) {
                     🔄 Alterner 5 claques dans le dos et 5 compressions thoraciques jusqu'à l'expulsion du corps étranger ou l'arrivée des secours.
                 </div>
 
-                {/* Section Vidéo de démonstration */}
-                <div style={{ marginTop: '20px', background: 'rgba(255, 255, 255, 0.05)', padding: '14px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)' }}>
-                    <h4 style={{ margin: '0 0 8px 0', color: '#38bdf8', fontSize: '14px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                        🎬 Vidéos démonstratives
-                    </h4>
-                    <a
-                        href="https://www.youtube.com/results?search_query=premiers+secours+nourrisson+etouffement"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            gap: '8px',
-                            background: '#ef4444',
-                            color: '#ffffff',
-                            textDecoration: 'none',
-                            padding: '10px 14px',
-                            borderRadius: '10px',
-                            fontSize: '13px',
-                            fontWeight: 'bold',
-                            boxShadow: '0 2px 8px rgba(239, 68, 68, 0.4)'
-                        }}
-                    >
-                        ▶ Voir les vidéos de désobstruction sur YouTube
-                    </a>
+                <div style={{ marginTop: '12px', background: 'rgba(239, 68, 68, 0.15)', border: '1px solid #ef4444', padding: '12px', borderRadius: '12px', fontSize: '12px', color: '#fecaca' }}>
+                    <strong>Si bébé perd connaissance :</strong> posez-le prudemment sur une surface dure, alertez immédiatement le 15 ou le 112 et commencez la réanimation guidée par les secours. Ne cherchez pas l'objet à l'aveugle avec les doigts.
                 </div>
+
+                <p style={{ margin: '14px 0 0', fontSize: '11px', color: '#94a3b8', lineHeight: 1.45 }}>
+                    Aide-mémoire uniquement : suivez toujours les consignes données par le 15 ou le 112.{' '}
+                    <a href="https://www.croix-rouge.fr/mes-infos-bebe/que-faire-si-mon-bebe-setouffe" target="_blank" rel="noopener noreferrer" style={{ color: '#7dd3fc' }}>
+                        Consulter la fiche de la Croix-Rouge française
+                    </a>
+                </p>
+
             </div>
         </div>
     );

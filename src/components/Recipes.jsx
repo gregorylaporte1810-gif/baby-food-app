@@ -1,102 +1,44 @@
-import { useState, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
-export default function Recipes({ tracker, recipeSearchTerm = '', foods = [], onAddIndustrialFood }) {
+export default function Recipes({ tracker, recipeSearchTerm = '', industrialHistoryKey = 'industrialHistory', onAddIndustrialFood }) {
     const [search, setSearch] = useState(recipeSearchTerm);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalMode, setModalMode] = useState('camera'); // 'camera' ou 'manual'
     const [scannedProductName, setScannedProductName] = useState('');
     const [scannedBrand, setScannedBrand] = useState('Blédina');
     const [babyReaction, setBabyReaction] = useState('liked'); // 'liked' ou 'disliked'
-    const [isScanning, setIsScanning] = useState(false);
     const [scanError, setScanError] = useState('');
 
     const [industrialHistory, setIndustrialHistory] = useState(() => {
-    const saved = localStorage.getItem('industrialHistory');
-    return saved ? JSON.parse(saved) : [
-        { name: "Petits Pots Carottes Douces", brand: "Blédina", reaction: "liked", date: "2026-08-18" },
-        { name: "Menu du Soir Potiron Légumes", brand: "Hipp Biologique", reaction: "liked", date: "2026-08-20" }
-    ];
+    try {
+        const saved = localStorage.getItem(industrialHistoryKey) ?? localStorage.getItem('industrialHistory');
+        return saved ? JSON.parse(saved) : [];
+    } catch {
+        return [];
+    }
 });
 
 // Ajoute cet useEffect juste en dessous pour sauvegarder les changements :
 useEffect(() => {
-    localStorage.setItem('industrialHistory', JSON.stringify(industrialHistory));
-}, [industrialHistory]);
+    localStorage.setItem(industrialHistoryKey, JSON.stringify(industrialHistory));
+}, [industrialHistory, industrialHistoryKey]);
 
     const videoRef = useRef(null);
     const mediaStreamRef = useRef(null);
+    const scanIntervalRef = useRef(null);
 
-    useEffect(() => {
-        setSearch(recipeSearchTerm);
-    }, [recipeSearchTerm]);
-
-    // Gestion de la caméra pour le scan
-    useEffect(() => {
-        if (isModalOpen && modalMode === 'camera') {
-            startCamera();
-        } else {
-            stopCamera();
+    const stopCamera = useCallback(() => {
+        if (scanIntervalRef.current) {
+            clearInterval(scanIntervalRef.current);
+            scanIntervalRef.current = null;
         }
-        return () => stopCamera();
-    }, [isModalOpen, modalMode]);
-
-    const startCamera = async () => {
-        setScanError('');
-        try {
-            const stream = await navigator.mediaDevices.getUserMedia({
-                video: { facingMode: 'environment' }
-            });
-            mediaStreamRef.current = stream;
-            if (videoRef.current) {
-                videoRef.current.srcObject = stream;
-                videoRef.current.play();
-                startBarcodeDetection();
-            }
-        } catch (err) {
-            setScanError("Impossible d'accéder à la caméra. Utilise la saisie manuelle.");
-            setModalMode('manual');
-        }
-    };
-
-    const stopCamera = () => {
         if (mediaStreamRef.current) {
-            mediaStreamRef.current.getTracks().forEach(track => track.stop());
+            mediaStreamRef.current.getTracks().forEach((track) => track.stop());
             mediaStreamRef.current = null;
         }
-        setIsScanning(false);
-    };
+    }, []);
 
-    const startBarcodeDetection = () => {
-        if (!('BarcodeDetector' in window)) {
-            setScanError("Le scan automatique n'est pas supporté par ce navigateur. Utilise la saisie manuelle.");
-            return;
-        }
-
-        const barcodeDetector = new BarcodeDetector({
-            formats: ['ean_13', 'ean_8', 'upc_a', 'upc_e', 'code_128']
-        });
-
-        setIsScanning(true);
-        const interval = setInterval(async () => {
-            if (videoRef.current && videoRef.current.readyState === videoRef.current.HAVE_ENOUGH_DATA) {
-                try {
-                    const barcodes = await barcodeDetector.detect(videoRef.current);
-                    if (barcodes.length > 0) {
-                        const code = barcodes[0].rawValue;
-                        clearInterval(interval);
-                        stopCamera();
-                        await fetchProductInfo(code);
-                    }
-                } catch (e) {
-                    // Ignore detection errors during frames
-                }
-            }
-        }, 500);
-
-        return () => clearInterval(interval);
-    };
-
-    const fetchProductInfo = async (barcode) => {
+    const fetchProductInfo = useCallback(async (barcode) => {
         setScannedProductName(`Recherche du produit (${barcode})...`);
         setModalMode('manual');
         try {
@@ -108,10 +50,71 @@ useEffect(() => {
             } else {
                 setScannedProductName(`Pot inconnu (${barcode})`);
             }
-        } catch (err) {
+        } catch {
             setScannedProductName(`Pot scanné (${barcode})`);
         }
-    };
+    }, []);
+
+    const startBarcodeDetection = useCallback(() => {
+        if (!('BarcodeDetector' in window)) {
+            setScanError("Le scan automatique n'est pas supporté par ce navigateur. Utilise la saisie manuelle.");
+            return;
+        }
+
+        const barcodeDetector = new window.BarcodeDetector({
+            formats: ['ean_13', 'ean_8', 'upc_a', 'upc_e', 'code_128']
+        });
+
+        scanIntervalRef.current = window.setInterval(async () => {
+            if (videoRef.current && videoRef.current.readyState === videoRef.current.HAVE_ENOUGH_DATA) {
+                try {
+                    const barcodes = await barcodeDetector.detect(videoRef.current);
+                    if (barcodes.length > 0) {
+                        const code = barcodes[0].rawValue;
+                        stopCamera();
+                        await fetchProductInfo(code);
+                    }
+                } catch {
+                    // Une image illisible est normale pendant que la caméra cherche le code.
+                }
+            }
+        }, 500);
+    }, [fetchProductInfo, stopCamera]);
+
+    const startCamera = useCallback(async () => {
+        setScanError('');
+        try {
+            if (!navigator.mediaDevices?.getUserMedia) {
+                throw new Error('Camera unavailable');
+            }
+            const stream = await navigator.mediaDevices.getUserMedia({
+                video: { facingMode: 'environment' }
+            });
+            mediaStreamRef.current = stream;
+            if (videoRef.current) {
+                videoRef.current.srcObject = stream;
+                await videoRef.current.play();
+                startBarcodeDetection();
+            }
+        } catch {
+            setScanError("Impossible d'accéder à la caméra. Utilise la saisie manuelle.");
+            setModalMode('manual');
+        }
+    }, [startBarcodeDetection]);
+
+    // Gestion de la caméra pour le scan
+    useEffect(() => {
+        let cameraTimer;
+        if (isModalOpen && modalMode === 'camera') {
+            cameraTimer = window.setTimeout(startCamera, 0);
+        } else {
+            stopCamera();
+        }
+        return () => {
+            window.clearTimeout(cameraTimer);
+            stopCamera();
+        };
+    }, [isModalOpen, modalMode, startCamera, stopCamera]);
 
     const recipesList = [
         // --- LÉGUMES & TUBÉROSES ---[cite: 5]
@@ -364,18 +367,18 @@ useEffect(() => {
 
         // --- PROTÉINES & ALLERGÈNES ---[cite: 5]
         {
-            title: "🥚 Omelette Fondante au Brocoli",
+            title: "🥚 Galette Fondante Œuf & Brocoli",
             ingredients: ["oeuf", "brocoli", "beurre"],
             type: "DME / Allergène (dès 6 mois)",
             ingredientsDetails: [
-                "1 œuf entier",
+                "1/4 d'œuf dur écrasé",
                 "40 g de fleurettes de brocoli",
                 "1 noisette de beurre"
             ],
             steps: [
                 "Cuire les fleurettes de brocoli à la vapeur jusqu'à ce qu'elles soient très tendres, puis les écraser.",
-                "Battre l'œuf dans un bol et y incorporer le brocoli écrasé.",
-                "Cuire à la poêle à feu très doux avec un peu de beurre, sans coloration excessive, puis couper en lanières."
+                "Écraser très finement l'œuf dur avec le brocoli.",
+                "Former une galette souple et la réchauffer à la poêle à feu très doux avec un peu de beurre, puis adapter la texture aux capacités de bébé."
             ]
         },
         {
@@ -383,7 +386,7 @@ useEffect(() => {
             ingredients: ["cabillaud", "courgette", "pomme-de-terre", "huile-olive"],
             type: "Purée (dès 6 mois)",
             ingredientsDetails: [
-                "20 g de filet de cabillaud (sans arêtes)",
+                "10 g de filet de cabillaud (sans arêtes)",
                 "80 g de courgette (pelée)",
                 "80 g de pomme de terre",
                 "1 c. à c. d'huile d'olive"
@@ -399,13 +402,13 @@ useEffect(() => {
             ingredients: ["boeuf", "courgette", "oeuf"],
             type: "DME / Repas (dès 8 mois)",
             ingredientsDetails: [
-                "30 g de bœuf haché",
+                "10 g de bœuf haché",
                 "50 g de courgette râpée",
-                "1 jaune d'œuf"
+                "Un peu de pomme de terre écrasée pour lier"
             ],
             steps: [
                 "Bien essorer la courgette râpée dans un torchon pour retirer l'eau.",
-                "Mélanger la viande hachée, la courgette et le jaune d'œuf.",
+                "Mélanger la viande hachée, la courgette et la pomme de terre écrasée.",
                 "Façonner de petites boulettes et les cuire au four 12 minutes à 180°C jusqu'à cuisson complète à cœur."
             ]
         },
@@ -414,7 +417,7 @@ useEffect(() => {
             ingredients: ["poulet", "riz", "courgette", "ricotta"],
             type: "Repas complet (dès 8 mois)",
             ingredientsDetails: [
-                "30 g de blanc de poulet",
+                "10 g de blanc de poulet",
                 "30 g de riz rond",
                 "50 g de courgette",
                 "1 c. à c. de ricotta"
@@ -430,7 +433,7 @@ useEffect(() => {
             ingredients: ["dinde", "carotte", "courge", "pomme-de-terre"],
             type: "Repas complet (dès 6-8 mois)",
             ingredientsDetails: [
-                "20 g de filet de dinde",
+                "10 g de filet de dinde",
                 "70 g de carottes",
                 "70 g de courge (ou potimarron)",
                 "50 g de pomme de terre"
@@ -446,7 +449,7 @@ useEffect(() => {
             ingredients: ["saumon", "riz", "brocoli", "curry-doux"],
             type: "Repas complet (dès 8 mois)",
             ingredientsDetails: [
-                "25 g de pavé de saumon (sans arêtes)",
+                "10 g de pavé de saumon (sans arêtes)",
                 "30 g de riz",
                 "50 g de fleurettes de brocoli",
                 "1 pincée de curry doux"
@@ -477,7 +480,7 @@ useEffect(() => {
             type: "Repas complet (dès 8 mois)",
             ingredientsDetails: [
                 "30 g de petites pâtes (coquillettes)",
-                "20 g de jambon blanc découenné",
+                "10 g de jambon blanc découenné et peu salé",
                 "40 g de petits pois",
                 "1 noisette de beurre"
             ],
@@ -494,7 +497,7 @@ useEffect(() => {
             type: "Repas complet (dès 8 mois)",
             ingredientsDetails: [
                 "1 belle tomate mûre (pelée et épépinée)",
-                "20 g de thon au naturel (bien rincé)",
+                "10 g de thon au naturel (bien rincé)",
                 "30 g de riz rond",
                 "1 filet d'huile d'olive"
             ],
@@ -511,7 +514,7 @@ useEffect(() => {
             type: "Goûter / Dessert (dès 8 mois)",
             ingredientsDetails: [
                 "20 g de semoule fine de blé",
-                "10 cl de lait infantile (ou lait entier)",
+                "10 cl de lait infantile préparé selon la notice",
                 "Le jus d'une 1/2 orange douce"
             ],
             steps: [

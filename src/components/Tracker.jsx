@@ -1,6 +1,13 @@
-export default function Tracker({ foods, tracker }) {
+export default function Tracker({ foods, tracker, industrialHistoryKey = 'industrialHistory' }) {
   // Récupération des pots industriels stockés dans le localStorage
-  const savedIndustrial = JSON.parse(localStorage.getItem('industrialHistory') || '[]');
+  const savedIndustrial = (() => {
+    try {
+      const saved = localStorage.getItem(industrialHistoryKey) ?? localStorage.getItem('industrialHistory');
+      return saved ? JSON.parse(saved) : [];
+    } catch {
+      return [];
+    }
+  })();
 
   // Calcul du nombre d'aliments classiques testés + les pots industriels
   const trackerTestedCount = Object.values(tracker).filter((f) => f.tested).length;
@@ -10,25 +17,6 @@ export default function Tracker({ foods, tracker }) {
 
   // Calcul du pourcentage (bloqué à 100% maximum pour éviter de dépasser)
   const percentage = totalCount > 0 ? Math.min(Math.round((testedCount / totalCount) * 100), 100) : 0;
-  const handleAddIndustrialFood = (newEntry) => {
-    // Crée une clé propre pour identifier le pot dans le tracker
-    const foodKey = `${newEntry.brand}-${newEntry.name}`
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/[^a-z0-9]/g, "-");
-
-    // Met à jour le state global du tracker pour que le récap le compte
-    setTracker(prevTracker => ({
-      ...prevTracker,
-      [foodKey]: {
-        tested: true,
-        reaction: newEntry.reaction,
-        date: newEntry.date
-      }
-    }));
-  };
-
   return (
     <div style={{
       background: 'rgba(30, 41, 59, 0.7)',

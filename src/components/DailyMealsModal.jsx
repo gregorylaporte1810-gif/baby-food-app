@@ -15,7 +15,7 @@ export default function DailyMealsModal({ onClose }) {
             frequency: "2 repas à la cuillère par jour",
             meals: [
                 { name: "Matin", detail: "Tétée ou Biberon de lait (210 - 240 ml)" },
-                { name: "Midi", detail: "Purée (130g) + 10g de viande/poisson/œuf (2 c.à.c) + 1 c.à.c d'huile + Lait/Compote" },
+                { name: "Midi", detail: "Purée selon l'appétit + jusqu'à 10 g de viande/poisson ou 1/4 d'œuf dur + matière grasse + lait ou fruit" },
                 { name: "Goûter", detail: "Compote (60-100g) + Tétée ou Biberon de lait (210 ml)" },
                 { name: "Soir", detail: "Tétée ou Biberon de lait (210 - 240 ml) (+ purée de légumes si grand appétit)" }
             ]
@@ -25,7 +25,7 @@ export default function DailyMealsModal({ onClose }) {
             frequency: "3 à 4 vrais temps de repas",
             meals: [
                 { name: "Matin", detail: "Tétée ou Biberon (240 ml) (+ quelques morceaux de pain/fruit)" },
-                { name: "Midi", detail: "Légumes/féculents (180g) + 15g à 20g de protéine + 1 c.à.c d'huile + Laitage/Fruit" },
+                { name: "Midi", detail: "Légumes/féculents selon l'appétit + environ 10 g de viande/poisson ou 1/4 d'œuf dur + matière grasse + laitage/fruit" },
                 { name: "Goûter", detail: "Compote ou fruit tendre + Laitage (yaourt/petit suisse ou lait)" },
                 { name: "Soir", detail: "Purée de légumes/féculents (150-200g) avec un filet d'huile + Lait" }
             ]
@@ -44,8 +44,8 @@ export default function DailyMealsModal({ onClose }) {
 
     const frequencyWarnings = [
         {
-            title: "🐟 Poissons (2x / semaine max)",
-            desc: "Alterner 1 poisson gras (saumon, sardine) et 1 poisson maigre (cabillaud, colin). Interdire espadon, marlin et requin (mercure)."
+            title: "🐟 Poissons (2 fois par semaine)",
+            desc: "Alterner poisson gras et poisson maigre, varier les espèces et éviter les poissons fortement contaminés au mercure (espadon, marlin, requin...)."
         },
         {
             title: "🫀 Abats & Foie (1x / 2 semaines max)",

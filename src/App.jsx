@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import foodsData from './data/foods.json';
 import SearchBar from './components/SearchBar';
 import FoodList from './components/FoodList';
@@ -25,13 +25,14 @@ function App() {
   const [showDailyMeals, setShowDailyMeals] = useState(false);
   const [showHealthTracker, setShowHealthTracker] = useState(false);
   const [showSummary, setShowSummary] = useState(false);
+  const importInputRef = useRef(null);
 
   // État pour transmettre le filtre vers l'onglet recettes
   const [selectedRecipeIngredient, setSelectedRecipeIngredient] = useState('');
 
   // Gestion Multi-profils & Sauvegarde
   const [profiles, setProfiles] = useLocalStorage('baby_profiles', ['Bébé 1']);
-  const [activeProfile, setActiveProfile] = useState('Bébé 1');
+  const [activeProfile, setActiveProfile] = useLocalStorage('baby_active_profile', 'Bébé 1');
   const [trackers, setTrackers] = useLocalStorage('baby_trackers_multi', {});
 
   const currentTracker = trackers[activeProfile] || {};
@@ -84,6 +85,44 @@ function App() {
     }
   };
 
+  const handleExportData = () => {
+    const data = {};
+    for (let index = 0; index < localStorage.length; index += 1) {
+      const key = localStorage.key(index);
+      if (key && (key.startsWith('baby_') || key.startsWith('industrialHistory'))) {
+        data[key] = localStorage.getItem(key);
+      }
+    }
+
+    const blob = new Blob([JSON.stringify({ version: 1, exportedAt: new Date().toISOString(), data }, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `sauvegarde-bebe-${new Date().toISOString().slice(0, 10)}.json`;
+    link.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const handleImportData = async (event) => {
+    const file = event.target.files?.[0];
+    event.target.value = '';
+    if (!file) return;
+
+    try {
+      const backup = JSON.parse(await file.text());
+      if (!backup?.data || typeof backup.data !== 'object' || Array.isArray(backup.data)) throw new Error('Format invalide');
+      const entries = Object.entries(backup.data).filter(([key, value]) =>
+        typeof value === 'string' && (key.startsWith('baby_') || key.startsWith('industrialHistory'))
+      );
+      if (entries.length === 0) throw new Error('Aucune donnée compatible');
+      if (!window.confirm('Restaurer cette sauvegarde ? Les données actuelles portant les mêmes noms seront remplacées.')) return;
+      entries.forEach(([key, value]) => localStorage.setItem(key, value));
+      window.location.reload();
+    } catch {
+      alert("Ce fichier n'est pas une sauvegarde valide de l'application.");
+    }
+  };
+
   const filteredFoods = foodsData.filter((food) => {
     const matchesSearch = food.name.toLowerCase().includes(searchTerm.toLowerCase());
 
@@ -125,6 +164,18 @@ function App() {
         <div style={{ position: 'absolute', top: '180px', right: '-30px', fontSize: '24px', opacity: 0.7, pointerEvents: 'none' }}>🎨</div>
         <div style={{ position: 'absolute', top: '320px', left: '-30px', fontSize: '22px', opacity: 0.7, pointerEvents: 'none' }}>🚀</div>
         <div style={{ position: 'absolute', top: '500px', right: '-25px', fontSize: '24px', opacity: 0.7, pointerEvents: 'none' }}>🦁</div>
+
+        <header style={{ textAlign: 'left', margin: '8px 0 16px' }}>
+          <p style={{ margin: 0, color: '#0369a1', fontSize: '12px', fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+            Diversification alimentaire
+          </p>
+          <h1 style={{ margin: '2px 0 4px', color: '#0f172a', fontSize: '28px', lineHeight: 1.15, letterSpacing: '-0.02em' }}>
+            Les découvertes de bébé
+          </h1>
+          <p style={{ margin: 0, color: '#475569', fontSize: '13px', lineHeight: 1.45 }}>
+            Aliments, recettes, réactions et repères réunis au même endroit.
+          </p>
+        </header>
 
         {/* Sélecteur de Profil & Export */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px', gap: '8px' }}>
@@ -302,7 +353,11 @@ function App() {
         {/* Onglet Aliments */}
         {activeTab === 'foods' && (
           <>
-            <Tracker foods={foodsData} tracker={currentTracker} />
+            <Tracker
+              foods={foodsData}
+              tracker={currentTracker}
+              industrialHistoryKey={`industrialHistory_${activeProfile}`}
+            />
 
             <div style={{ margin: '12px 0' }}>
               <SearchBar
@@ -348,7 +403,12 @@ function App() {
 
         {/* Onglet Recettes & Sécurité */}
         {activeTab === 'recipes' && (
-          <Recipes tracker={currentTracker} recipeSearchTerm={selectedRecipeIngredient} />
+          <Recipes
+            key={`${activeProfile}:${selectedRecipeIngredient || 'all-recipes'}`}
+            tracker={currentTracker}
+            recipeSearchTerm={selectedRecipeIngredient}
+            industrialHistoryKey={`industrialHistory_${activeProfile}`}
+          />
         )}
         {activeTab === 'security' && <SecurityGuide />}
 
@@ -363,14 +423,30 @@ function App() {
         {showPortions && <PortionsModal onClose={() => setShowPortions(false)} />}
         {showFirstAid && <FirstAidModal onClose={() => setShowFirstAid(false)} />}
         {showDailyMeals && <DailyMealsModal onClose={() => setShowDailyMeals(false)} />}
-        {showHealthTracker && <HealthTrackerModal onClose={() => setShowHealthTracker(false)} />}
+        {showHealthTracker && (
+          <HealthTrackerModal
+            storageKey={`baby_health_logs_${activeProfile}`}
+            onClose={() => setShowHealthTracker(false)}
+          />
+        )}
         {showSummary && (
           <SummaryModal
             foods={foodsData}
             tracker={currentTracker}
+            healthStorageKey={`baby_health_logs_${activeProfile}`}
             onClose={() => setShowSummary(false)}
           />
         )}
+
+        <aside style={{ marginTop: '18px', padding: '12px 14px', borderRadius: '14px', background: 'rgba(255,255,255,0.72)', border: '1px solid rgba(148,163,184,0.35)', color: '#475569', fontSize: '11px', lineHeight: 1.5, textAlign: 'left' }}>
+          <strong style={{ color: '#334155' }}>Information importante :</strong> ces repères sont généraux et ne remplacent pas l’avis du pédiatre. En cas d’urgence, appelez le 15 ou le 112 et suivez les instructions des secours.
+        </aside>
+
+        <div style={{ display: 'flex', gap: '8px', marginTop: '10px' }}>
+          <button onClick={handleExportData} style={{ flex: 1, border: '1px solid #0ea5e9', background: '#ffffff', color: '#0369a1', borderRadius: '10px', padding: '8px', fontSize: '11px', fontWeight: 700, cursor: 'pointer' }}>💾 Sauvegarder mes données</button>
+          <button onClick={() => importInputRef.current?.click()} style={{ flex: 1, border: '1px solid #64748b', background: '#ffffff', color: '#334155', borderRadius: '10px', padding: '8px', fontSize: '11px', fontWeight: 700, cursor: 'pointer' }}>📂 Restaurer une sauvegarde</button>
+          <input ref={importInputRef} type="file" accept="application/json,.json" onChange={handleImportData} hidden />
+        </div>
 
         {/* Bouton Fixe d'Urgence */}
         <button
